@@ -13,7 +13,7 @@ function DepartmentDataTable(props) {
     const [searchDepartment, setSearchDepartment] = useState("");
 
     const getUsers = () => {
-        axios.get("http://localhost:8080/Department").then(
+        axios.get("https://internprojectberk.herokuapp.com/Department").then(
             (res) => {
                 console.log(res);
                 setData(res.data);
@@ -21,7 +21,7 @@ function DepartmentDataTable(props) {
         )
     }
     const search = () => {
-        axios.get("http://localhost:8080/findDepartmentByName/?department="+ searchDepartment).then(
+        axios.get("https://internprojectberk.herokuapp.com/findDepartmentByName/?department="+ searchDepartment).then(
             
             (res) => {
                 if(searchDepartment === "") {

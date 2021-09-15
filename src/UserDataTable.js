@@ -23,7 +23,7 @@ function UserDataTable(props) {
 
     
     const getUsers = () => {
-        axios.get("http://localhost:8080/Employees").then(
+        axios.get("https://internprojectberk.herokuapp.com/Employees").then(
             
             (res) => {
                 const newData = res.data.map((entry) => {return ({...entry, employeeProject: entry.employeeProject[0]})});
@@ -40,7 +40,7 @@ function UserDataTable(props) {
     }, []);
 
     const deleteEmployee = () => {
-        axios.get("http://localhost:8080/deleteEmployeeByNameandLastname/?name="+name+"&lastname="+lastname).then(
+        axios.get("https://internprojectberk.herokuapp.com/deleteEmployeeByNameandLastname/?name="+name+"&lastname="+lastname).then(
             
             (res) => {
                 console.log(res);
@@ -57,7 +57,7 @@ function UserDataTable(props) {
         
     }
     const addEmployee = () => {
-        axios.get("http://localhost:8080/addEmployee?name="+name2+"&lastname="+lastname2+"&age="+age+"&department="+departmentName).then(
+        axios.get("https://internprojectberk.herokuapp.com/addEmployee?name="+name2+"&lastname="+lastname2+"&age="+age+"&department="+departmentName).then(
             
             (res) => {
                 console.log(res);
@@ -78,7 +78,7 @@ function UserDataTable(props) {
     }
 
     const search = () => {
-        axios.get("http://localhost:8080/findEmployeeByName/?name="+ searchName).then(
+        axios.get("https://internprojectberk.herokuapp.com/findEmployeeByName/?name="+ searchName).then(
             
             
             (res) => {
@@ -95,7 +95,7 @@ function UserDataTable(props) {
         )
     }
     const searchMinAge = () => {
-        axios.get("http://localhost:8080/findEmployeeByAge/?age="+ minAge).then(
+        axios.get("https://internprojectberk.herokuapp.com/findEmployeeByAge/?age="+ minAge).then(
             
             
             (res) => {

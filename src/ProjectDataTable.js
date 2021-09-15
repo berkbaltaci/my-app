@@ -12,7 +12,7 @@ function ProjectDataTable(props) {
     const [searchProject, setSearchProject] = useState("");
 
     const getUsers = () => {
-        axios.get("http://localhost:8080/Project").then(
+        axios.get("https://internprojectberk.herokuapp.com/Project").then(
             (res) => {
                 console.log(res);
                 setData(res.data);
@@ -25,7 +25,7 @@ function ProjectDataTable(props) {
     }, []);
 
     const search = () => {
-        axios.get("http://localhost:8080/findProjectByName/?project="+ searchProject).then(
+        axios.get("https://internprojectberk.herokuapp.com/findProjectByName/?project="+ searchProject).then(
             
             (res) => {
 

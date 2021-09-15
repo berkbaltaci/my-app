@@ -11,7 +11,7 @@ function SalaryDataTable(props) {
     const [minSalary, setMinSalary] = useState(undefined);
 
     const getUsers = () => {
-        axios.get("http://localhost:8080/Salary").then(
+        axios.get("https://internprojectberk.herokuapp.com/Salary").then(
             (res) => {
                 console.log(res);
                 setData(res.data);
@@ -19,7 +19,7 @@ function SalaryDataTable(props) {
         )
     }
     const search = () => {
-        axios.get("http://localhost:8080/findSalaryBy/?salary="+ minSalary).then(
+        axios.get("https://internprojectberk.herokuapp.com/findSalaryBy/?salary="+ minSalary).then(
             
             (res) => {
                 console.log(res);
